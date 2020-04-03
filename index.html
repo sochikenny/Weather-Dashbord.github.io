@@ -5,36 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
-    
-    <link rel="stylesheet" href="weather.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="weather.css">
+    
 </head>
 <body>
-    <div class = "container">
-        
-        <div class="Jumbotron">
-            <h1>Weather Dashboard</h1>
-        </div>
-   
+    <div class="Jumbotron">
+        <h1>Weather Dashboard</h1>
+    </div>
+    
         <div class = "row">
 
-        <div class= "col-md-4">
+        <div class= "col-md-3">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" aria-label="city name" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button type="button" class="btn btn-primary btn-lg">Search</button>
+                <button type="button" class="btn btn-primary btn-lg">search</button>
             </div>
           </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-9">
+            <div class = "row1">
+                <div class="card" id = "current-day" style="width: 26rem">
+                    <div class="card-body" id="card-body1">
+                      <!--stuff is here--> 
+                    </div>
+                  </div>
+            </div>
+            <br></br>
+            <div class="row 2">
+                <div class="card-deck">
+                    <div class="card" id = "day2">
+                      <div class="card-body" id = "card-body2">
+                        
+                      </div>
+                    </div>
+                    <div class="card" id = "day3">
+                      <div class="card-body" id = "card-body3">
+                        
+                        
+                      </div>
+                    </div>
+                    <div class="card" id="day4">                     
+                      <div class="card-body" id = "card-body4">
+                        
+                        
+                      </div>
+                    </div>
+                    <div class="card" id="day5">      
+                        <div class="card-body" id="card-body5">
+                          
+                          
+                        </div>
+                      </div>
+                  </div>
+            </div>
 
 
         </div>
 
         
         </div>
-    </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="weather.js"></script>  
 </body>
+
 </html>
+
+<!-- <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text</p> -->
