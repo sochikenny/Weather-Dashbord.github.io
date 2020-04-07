@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +10,34 @@
     <link rel="stylesheet" href="weather.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <div class="Jumbotron">
         <h1>Weather Dashboard</h1>
     </div>
-    
-        <div class = "row">
 
-        <div class= "col-md-3">
+
+
+    <div class="col-md-3">
         <div class="input-group mb-3">
-            <input type="text" id="Search-Term" class="form-control" aria-label="city name" aria-describedby="basic-addon2">
+            <input type="text" id="Search-Term" class="form-control" aria-label="city name"
+                aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <button type="button" id="SearchBtn" class="btn btn-primary btn-lg">search</button>
             </div>
-          </div>
         </div>
+    </div>
 
-        <div class="col-md-9">
-            <div class = "row1">
-                <div class="card" id = "current-day" style="width: 26rem">
-                    <div class="card-body" id="card-body1">
-                      <!--stuff is here--> 
-                    </div>
-                  </div>
+    <div class="row">
+        <div class="card" id="current-day" style="width: 26rem">
+            <div class="card-body" id="card-body1">
+
             </div>
-            <br></br>
+        </div>
+    </div>
+
+
+    <!-- <br></br>
             <div class="row 2">
                 <div class="card-deck">
                     <div class="card" id = "day2">
@@ -60,16 +64,18 @@
                         </div>
                       </div>
                   </div>
-            </div>
+            </div> -->
 
 
-        </div>
 
-        
-        </div>
-    
+
+
+
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="weather.js"></script>  
+    <script src="weather.js"></script>
 </body>
 
 </html>

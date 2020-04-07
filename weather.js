@@ -5,7 +5,7 @@
 //var city = "Atlanta";
 //var city = $("#SearchTerm").val("");
 
-function CurrentDay(city) {
+function WeatherForecast(city) { //function for the weather forecast of the current day in whatever city
 
     var APIkey = "&appid=801906cebc106515bac3bda6ad7c527b";
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
@@ -27,7 +27,9 @@ function CurrentDay(city) {
         var humid = $("<h3>").text("Humidity: " + response.list[0].main.humidity + " % ");
         var windspeed = $("<h4>").text("Wind Speed: " + response.list[0].wind.speed);
 
+        $("#card-body1").empty();
         var cardbodA = $("#card-body1").append(city, tempF, humid, windspeed);
+        
         $("#current-day").append(cardbodA);
     });
 
@@ -38,7 +40,7 @@ $("#SearchBtn").on("click", function(event) {
 
     var cityinput = $("#Search-Term").val().trim();
 
-    CurrentDay(cityinput);
+    WeatherForecast(cityinput);
 
 });
 
