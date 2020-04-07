@@ -45,7 +45,7 @@ function multipledayForecast(city) {
     }).then(function (response) {
         var results = response.list
         for (var i = 0; i < results.length; i++){
-            if (results[i].dt_txt.indexOf("12:00:00")){
+            if ((results[i].dt_txt.indexOf("12:00:00") !== -1)){
                 var dailydiv = $("<div>")
                 var degrees = results[i].main.temp;
                 var degInKel = (degrees - 273.25) * 1.80 + 32;
