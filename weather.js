@@ -1,9 +1,3 @@
-//$("button").on("click", function () {
-
-// var city = $(this).attr("aria-label");
-//function searchcity(city) { }
-//var city = "Atlanta";
-//var city = $("#SearchTerm").val("");
 
 function CurrentDayForecast(city) { //function for the weather forecast of the current day in whatever city
 
@@ -23,11 +17,11 @@ function CurrentDayForecast(city) { //function for the weather forecast of the c
         var city = $("<h1>").text(response.city.name);
         var temperature = response.list[0].main.temp;
         var tempK = (temperature - 273.15) * 1.80 + 32;
-        var tempF = $("<h2>").text("Temperature (F): " + tempK.toFixed(2));
+        var tempF = $("<h2>").text("Temperature (F): " + tempK.toFixed(0));
         var humid = $("<h3>").text("Humidity: " + response.list[0].main.humidity + " % ");
-        var windspeed = $("<h4>").text("Wind Speed: " + response.list[0].wind.speed);
+        var windspeed = $("<h4>").text("Wind Speed: " + response.list[0].wind.speed + " mph");
 
-        $("#card-body1").empty();
+       
         var cardbodA = $("#card-body1").append(city, tempF, humid, windspeed);
 
         $("#current-day").append(cardbodA);
@@ -49,17 +43,21 @@ function multipledayForecast(city) {
                 var dailydiv = $('<div class="card col-md-2 ml-4 bg-primary text-white"></div>');
                 var subdailydiv = $('<div class="card-body p-3 forecastBody"></div>')
                 var degrees = results[i].main.temp;
-                var degInKel = (degrees - 273.25) * 1.80 + 32;
-                var degInFaren = $("<h2>").text("Temperature (F): " + degInKel.toFixed(2));
-                var sweaty = $("<h3>").text("Humidity: " + results[i].main.humidity + " % ");
-                var windfast = $("<h4>").text("Wind Speed: " + results[i].wind.speed);
+                var degInKel = Math.floor((degrees - 273.25) * 1.80 + 32);
+                var degInFaren = $("<h5>").text("Temperature (F): " + degInKel.toFixed(0));
+                var sweaty = $("<h6>").text("Humidity: " + results[i].main.humidity + " % ");
+                var windfast = $("<h7>").text("Wind Speed: " + Math.floor(results[i].wind.speed) + " mph");
 
+           
                 var dailydivA = subdailydiv.append(degInFaren, sweaty, windfast);
                 var dailydivB = dailydiv.append(dailydivA);
                 
-
-                var dailyforecast = $(".rowone").append(dailydivB);
+                
+                var dailyforecast = $(".row").append(dailydivB);
+                
                 $(".container").append(dailyforecast);
+                
+                
             } 
 
         }
@@ -73,8 +71,10 @@ $("#SearchBtn").on("click", function (event) {
     var cityinput = $("#Search-Term").val().trim();
 
     CurrentDayForecast(cityinput);
+    $("#card-body1").empty();
 
     multipledayForecast(cityinput);
+    $(".row").empty();
 
 
 });
