@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="style.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -15,19 +15,27 @@
     <div class="Jumbotron">
         <h1>Weather Dashboard</h1>
     </div>
+
+    <div class="container-fluid">
+       
     
     <div class="col-md-3">
+        <h3>Search for City: </h3>
         <div class="input-group mb-3">
             <input type="text" id="Search-Term" class="form-control" aria-label="city name"
                 aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button type="button" id="SearchBtn" class="btn btn-primary btn-lg">search</button>
+                <button type="button" id="SearchBtn" class="btn btn-primary btn-lg">search</button>   
+            </div>
+            <div id="cityList">
+
             </div>
         </div>
     </div>
     
+
     <div class="rowone">
-        <div class="card" id="current-day" style="width: 26rem">
+        <div class="card" id="current-day" style="width: 30rem">
             <div class="card-body" id="card-body1">
 
             </div>
@@ -43,13 +51,12 @@
         
     </div>
 
+</div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="weather.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
-<!-- <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text</p> -->
