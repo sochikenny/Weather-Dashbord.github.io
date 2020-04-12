@@ -5,7 +5,7 @@
 //var city = "Atlanta";
 //var city = $("#SearchTerm").val("");
 
-function WeatherForecast(city) { //function for the weather forecast of the current day in whatever city
+function CurrentDayForecast(city) { //function for the weather forecast of the current day in whatever city
 
     var APIkey = "&appid=801906cebc106515bac3bda6ad7c527b";
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
@@ -46,16 +46,20 @@ function multipledayForecast(city) {
         var results = response.list
         for (var i = 0; i < results.length; i++){
             if ((results[i].dt_txt.indexOf("12:00:00") !== -1)){
-                var dailydiv = $("<div>")
+                var dailydiv = $('<div class="card col-md-2 ml-4 bg-primary text-white"></div>');
+                var subdailydiv = $('<div class="card-body p-3 forecastBody"></div>')
                 var degrees = results[i].main.temp;
                 var degInKel = (degrees - 273.25) * 1.80 + 32;
                 var degInFaren = $("<h2>").text("Temperature (F): " + degInKel.toFixed(2));
                 var sweaty = $("<h3>").text("Humidity: " + results[i].main.humidity + " % ");
                 var windfast = $("<h4>").text("Wind Speed: " + results[i].wind.speed);
 
-                var dailydivA = dailydiv.append(degInFaren, sweaty, windfast);
+                var dailydivA = subdailydiv.append(degInFaren, sweaty, windfast);
+                var dailydivB = dailydiv.append(dailydivA);
                 
-                $(".container").append(dailydivA);
+
+                var dailyforecast = $(".rowone").append(dailydivB);
+                $(".container").append(dailyforecast);
             } 
 
         }
@@ -68,7 +72,7 @@ $("#SearchBtn").on("click", function (event) {
 
     var cityinput = $("#Search-Term").val().trim();
 
-    WeatherForecast(cityinput);
+    CurrentDayForecast(cityinput);
 
     multipledayForecast(cityinput);
 
