@@ -2,7 +2,7 @@
 function CurrentDayForecast(city) {
 
     var APIkey = "&appid=801906cebc106515bac3bda6ad7c527b";
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
 
     $.ajax({
         url: queryURL,
@@ -16,7 +16,7 @@ function CurrentDayForecast(city) {
         var humid = $("<h3>").text("Humidity: " + response.list[0].main.humidity + " % ");
         var windspeed = $("<h3>").text("Wind Speed: " + response.list[0].wind.speed + " mph");
         var CurrentWeatherIcon = response.list[0].weather[0].icon;
-        var getCurrentWeatherIcon = $("<img src = http://openweathermap.org/img/wn/" + CurrentWeatherIcon + "@2x.png />");
+        var getCurrentWeatherIcon = $("<img src = https://openweathermap.org/img/wn/" + CurrentWeatherIcon + "@2x.png />");
 
 
         var cardbodA = $("#card-body1").append(city, getCurrentWeatherIcon, tempF, humid, windspeed);
@@ -28,7 +28,7 @@ function CurrentDayForecast(city) {
 
 function multipledayForecast(city) {
     var APIkey = "&appid=801906cebc106515bac3bda6ad7c527b";
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + APIkey;
 
     $.ajax({
         url: queryURL,
@@ -45,7 +45,7 @@ function multipledayForecast(city) {
                 var sweaty = $("<h6>").text("Humidity: " + results[i].main.humidity + " % ");
                 var windfast = $("<h7>").text("Wind Speed: " + results[i].wind.speed + " mph");
                 var CurrentWeatherIcons = response.list[i].weather[0].icon;
-                var getCurrentWeatherIcons = $("<img src = http://openweathermap.org/img/wn/" + CurrentWeatherIcons + "@2x.png />")
+                var getCurrentWeatherIcons = $("<img src = https://openweathermap.org/img/wn/" + CurrentWeatherIcons + "@2x.png />")
 
 
                 var dailydivA = subdailydiv.append(degInFaren, sweaty, windfast, getCurrentWeatherIcons);
