@@ -36,12 +36,12 @@ function multipledayForecast(city) {
     }).then(function (response) {
         var results = response.list
         for (var i = 0; i < results.length; i++) {
-            if ((results[i].dt_txt.indexOf("12:00:00") !== -1)) {
+            if ((results[i].dt_txt.indexOf("15:00:00")!== -1)) {
                 var dailydiv = $('<div class="card col-md-2 ml-4 bg-primary text-white"></div>');
                 var subdailydiv = $('<div class="card-body p-3 forecastBody"></div>')
                 var degrees = results[i].main.temp;
                 var degInKel = Math.floor((degrees - 273.25) * 1.80 + 32);
-                var degInFaren = $("<h5>").text("Temperature (F): " + degInKel.toFixed(0));
+                var degInFaren = $("<h5>").text("Temp (F): " + degInKel.toFixed(0));
                 var sweaty = $("<h6>").text("Humidity: " + results[i].main.humidity + " % ");
                 var windfast = $("<h7>").text("Wind Speed: " + results[i].wind.speed + " mph");
                 var CurrentWeatherIcons = response.list[i].weather[0].icon;
