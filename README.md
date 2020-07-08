@@ -1,9 +1,7 @@
-# Weather App (powered by Open Weather API)
+# Weather App 
 
-AS A traveler, 
-I WANT to see the weather outlook for multiple cities, 
-SO THAT I can plan a trip accordingly 
+This is an application that provides details of the weather conditions in any city. When a user searches for a city name, the current weather as well as a five day forecast is rendered onto the page. This application is powered by the Open Weather API. 
 
-GIVEN a weather dashboard with form inputs, 
-WHEN I search for a city, 
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+## Live Site
+
+
